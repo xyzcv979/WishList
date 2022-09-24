@@ -32,11 +32,11 @@ class MainActivity : AppCompatActivity() {
             imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
 
             val nameInput = nameEditText.text.toString()
-            val priceInput = priceEditText.text.toString()
+            val priceInput = "$" + priceEditText.text.toString()
             val urlInput = urlEditText.text.toString()
 
             if(nameInput.length == 0 ||
-                priceInput.length == 0 ||
+                priceInput.length == 1 ||
                 urlInput.length == 0) {
                 Toast.makeText(this, "Incomplete text fields!", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
